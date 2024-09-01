@@ -6,7 +6,7 @@
 
 ![9F90073A-3F89-4AF6-8A8B-52388088CDFC](https://github.com/user-attachments/assets/f0a17654-554e-4f4c-bc4f-c6a2d111df73)
 
-<b>[View My Startup 바로가기](https://team4-vms.netlify.app/)</b> <br>
+<b>[View My Startup 바로가기](https://view-my-startup.vercel.app/)</b> <br>
 <b>[View My Startup_ReadMe](https://github.com/ViewMyStartup/view-my-startup)<b>
 
 ### 구현된 주요 기능:
@@ -25,9 +25,8 @@
 프로젝트는 다음과 같은 기술 스택과 협업 도구를 사용했습니다:
 
 ### Frontend
+- Next.js
 - React
-- JavaScript
-- CSS
 
 ### Backend
 - Node.js
@@ -69,6 +68,11 @@
 - [x] 중간발표 [**2024-08-22**]
 - [x] 백엔드 API 구성, 담당자 지정 및 DB 구축 [**2024-08-22**]
 - [x] 중간 회의
+- [x] 리액트 기반 View My Startup ( `initial/react` 브랜치) 작업 완료
+ - 배포 주소 : [리액트 기반 배포 주소](https://view-my-startup-me.netlify.app/)
+- [x] Next.js로 마이그레이션 시작 ( `refactor/nextjs-migration` 브랜치) [**2024-11-11**]
+- [x] Next.js 프로젝트 마이그레이션 완료 ( `main` , `refactor/nextjs-migration` 브랜치) [**2024-11-12**]
+ - 배포 주소 : [Next.js 기반 배포 주소](https://view-my-startup.vercel.app/)
 
 ### 4. 백엔드 개발 및 프론트엔드 통합 과정
 
@@ -100,7 +104,8 @@
 
 ### 프론트엔드
 
-- 나의 기업 비교 페이지 구현
+- **Next.js 마이그레이션**: 기존 React 프로젝트를 Next.js로 마이그레이션하여 서버 사이드 렌더링 및 파일 기반 라우팅 구현 (브랜치: `refactor/nextjs-migration` , `main` 에 병합됨)
+- **[나의 기업 비교 페이지](https://github.com/ViewMyStartup/view-my-startup/blob/main/vms_fe/src/pages/mycompany.js)** 구현
 - 기업 비교 API를 호출하여 나의 기업과 선택한 기업의 비교 결과를 화면에 렌더링
   - **비교 결과 확인하기 섹션**: 나의 기업과 선택한 기업 간의 비교 결과를 화면에 렌더링
   - **기업 순위 확인하기 섹션**: 나의 기업과 전체 기업에서 나의 기업을 제외한 후, 나의 기업과 근접한 위 2개, 아래 2개 기업을 조회하여 순위와 함께 렌더링 <br> (나의 기업이 상위 또는 하위에 있을 경우, 나의 기업 포함 5개 기업 조회)
@@ -117,7 +122,7 @@
 
 <br>
 
-### **나의 기업 비교 페이지**
+### **[나의 기업 비교 페이지](https://github.com/ViewMyStartup/view-my-startup/blob/main/vms_fe/src/pages/mycompany.js)**
 
 <table>
   <tr>
@@ -226,17 +231,9 @@
 ```
 📦vms_fe
  ┣ 📂public
- ┃ ┣ 📂images
- ┃ ┃ ┗ 📜company_logo.png
- ┃ ┣ 📜favicon.png
- ┃ ┗ 📜index.html
- ┣ 📂src
- ┃ ┣ 📂API
- ┃ ┃ ┣ 📜CompanyInvestDetailAPI.js
- ┃ ┃ ┣ 📜DefaultPageAPI.js
- ┃ ┃ ┗ 📜api.js
  ┃ ┣ 📂assets
  ┃ ┃ ┗ 📂images
+ ┃ ┃ ┃ ┣ 📜backgroundImge.jpg
  ┃ ┃ ┃ ┣ 📜ic_check.svg
  ┃ ┃ ┃ ┣ 📜ic_circle.svg
  ┃ ┃ ┃ ┣ 📜ic_delete.svg
@@ -250,7 +247,91 @@
  ┃ ┃ ┃ ┣ 📜ic_search.svg
  ┃ ┃ ┃ ┣ 📜ic_toggle.svg
  ┃ ┃ ┃ ┣ 📜logo_desktop_tablet.svg
- ┃ ┃ ┃ ┗ 📜logo_mobile.svg
+ ┃ ┃ ┃ ┣ 📜logo_home.js
+ ┃ ┃ ┃ ┣ 📜logo_home.module.css
+ ┃ ┃ ┃ ┣ 📜logo_mobile.svg
+ ┃ ┃ ┃ ┣ 📜placeHolder1.jpg
+ ┃ ┃ ┃ ┣ 📜placeHolder2.jpg
+ ┃ ┃ ┃ ┣ 📜placeHolder3.jpg
+ ┃ ┃ ┃ ┣ 📜placeHolder4.jpg
+ ┃ ┃ ┃ ┣ 📜placeHolder5.jpg
+ ┃ ┃ ┃ ┗ 📜placeHolder6.jpg
+ ┃ ┣ 📂images
+ ┃ ┃ ┣ 📜company_logo_1.png
+ ┃ ┃ ┣ 📜company_logo_10.png
+ ┃ ┃ ┣ 📜company_logo_11.png
+ ┃ ┃ ┣ 📜company_logo_12.png
+ ┃ ┃ ┣ 📜company_logo_13.png
+ ┃ ┃ ┣ 📜company_logo_14.png
+ ┃ ┃ ┣ 📜company_logo_15.png
+ ┃ ┃ ┣ 📜company_logo_16.png
+ ┃ ┃ ┣ 📜company_logo_17.png
+ ┃ ┃ ┣ 📜company_logo_18.png
+ ┃ ┃ ┣ 📜company_logo_19.png
+ ┃ ┃ ┣ 📜company_logo_2.png
+ ┃ ┃ ┣ 📜company_logo_20.png
+ ┃ ┃ ┣ 📜company_logo_21.png
+ ┃ ┃ ┣ 📜company_logo_22.png
+ ┃ ┃ ┣ 📜company_logo_23.png
+ ┃ ┃ ┣ 📜company_logo_24.png
+ ┃ ┃ ┣ 📜company_logo_25.png
+ ┃ ┃ ┣ 📜company_logo_26.png
+ ┃ ┃ ┣ 📜company_logo_27.png
+ ┃ ┃ ┣ 📜company_logo_28.png
+ ┃ ┃ ┣ 📜company_logo_29.png
+ ┃ ┃ ┣ 📜company_logo_3.png
+ ┃ ┃ ┣ 📜company_logo_30.png
+ ┃ ┃ ┣ 📜company_logo_31.png
+ ┃ ┃ ┣ 📜company_logo_32.png
+ ┃ ┃ ┣ 📜company_logo_33.png
+ ┃ ┃ ┣ 📜company_logo_34.png
+ ┃ ┃ ┣ 📜company_logo_35.png
+ ┃ ┃ ┣ 📜company_logo_36.png
+ ┃ ┃ ┣ 📜company_logo_37.png
+ ┃ ┃ ┣ 📜company_logo_38.png
+ ┃ ┃ ┣ 📜company_logo_39.png
+ ┃ ┃ ┣ 📜company_logo_4.png
+ ┃ ┃ ┣ 📜company_logo_40.png
+ ┃ ┃ ┣ 📜company_logo_41.png
+ ┃ ┃ ┣ 📜company_logo_42.png
+ ┃ ┃ ┣ 📜company_logo_43.png
+ ┃ ┃ ┣ 📜company_logo_5.png
+ ┃ ┃ ┣ 📜company_logo_6.png
+ ┃ ┃ ┣ 📜company_logo_7.png
+ ┃ ┃ ┣ 📜company_logo_8.png
+ ┃ ┃ ┗ 📜company_logo_9.png
+ ┃ ┣ 📜favicon.png
+ ┃ ┗ 📜index.html
+ ┣ 📂src
+ ┃ ┣ 📂API
+ ┃ ┃ ┣ 📜CompanyInvestDetailAPI.js
+ ┃ ┃ ┣ 📜DefaultPageAPI.js
+ ┃ ┃ ┗ 📜api.js
+ ┃ ┣ 📂assets
+ ┃ ┃ ┗ 📂images
+ ┃ ┃ ┃ ┣ 📜backgroundImge.jpg
+ ┃ ┃ ┃ ┣ 📜ic_check.svg
+ ┃ ┃ ┃ ┣ 📜ic_circle.svg
+ ┃ ┃ ┃ ┣ 📜ic_delete.svg
+ ┃ ┃ ┃ ┣ 📜ic_delete_circle_small.svg
+ ┃ ┃ ┃ ┣ 📜ic_kebab.svg
+ ┃ ┃ ┃ ┣ 📜ic_minus.svg
+ ┃ ┃ ┃ ┣ 📜ic_password_eye_close.svg
+ ┃ ┃ ┃ ┣ 📜ic_password_eye_open.svg
+ ┃ ┃ ┃ ┣ 📜ic_plus.svg
+ ┃ ┃ ┃ ┣ 📜ic_restart.svg
+ ┃ ┃ ┃ ┣ 📜ic_search.svg
+ ┃ ┃ ┃ ┣ 📜ic_toggle.svg
+ ┃ ┃ ┃ ┣ 📜logo_desktop_tablet.svg
+ ┃ ┃ ┃ ┣ 📜logo_home.js
+ ┃ ┃ ┃ ┣ 📜logo_home.module.css
+ ┃ ┃ ┃ ┣ 📜logo_mobile.svg
+ ┃ ┃ ┃ ┣ 📜placeHolder1.jpg
+ ┃ ┃ ┃ ┣ 📜placeHolder2.jpg
+ ┃ ┃ ┃ ┣ 📜placeHolder3.jpg
+ ┃ ┃ ┃ ┣ 📜placeHolder4.jpg
+ ┃ ┃ ┃ ┣ 📜placeHolder5.jpg
+ ┃ ┃ ┃ ┗ 📜placeHolder6.jpg
  ┃ ┣ 📂components
  ┃ ┃ ┣ 📂common
  ┃ ┃ ┃ ┣ 📜AddCompanyBtn.js
@@ -326,27 +407,31 @@
  ┃ ┃ ┣ 📜useGetCompanyData.js
  ┃ ┃ ┗ 📜usePageHandler.js
  ┃ ┣ 📂pages
- ┃ ┃ ┣ 📜CompanyInvestDetail.js
- ┃ ┃ ┣ 📜CompanyInvestDetail.module.css
- ┃ ┃ ┣ 📜CurrentStateCompare.js
- ┃ ┃ ┣ 📜CurrentStateCompare.module.css
- ┃ ┃ ┣ 📜CurrentStateInvest.js
- ┃ ┃ ┣ 📜CurrentStateInvest.module.css
- ┃ ┃ ┣ 📜DefaultPage.js
- ┃ ┃ ┣ 📜DefaultPage.module.css
- ┃ ┃ ┣ 📜MyCompanyCompare.js
- ┃ ┃ ┗ 📜MyCompanyCompare.module.css
+ ┃ ┃ ┣ 📂[id]
+ ┃ ┃ ┃ ┗ 📜[companyId].js
+ ┃ ┃ ┣ 📜_app.js
+ ┃ ┃ ┣ 📜_document.js
+ ┃ ┃ ┣ 📜compare.js
+ ┃ ┃ ┣ 📜index.js
+ ┃ ┃ ┣ 📜investinfo.js
+ ┃ ┃ ┗ 📜mycompany.js
  ┃ ┣ 📂styles
- ┃ ┃ ┗ 📜reset.css
- ┃ ┣ 📂utils
+ ┃ ┃ ┣ 📂pages
+ ┃ ┃ ┃ ┣ 📜CompanyInvestDetail.module.css
+ ┃ ┃ ┃ ┣ 📜CurrentStateCompare.module.css
+ ┃ ┃ ┃ ┣ 📜CurrentStateInvest.module.css
+ ┃ ┃ ┃ ┣ 📜DefaultPage.module.css
+ ┃ ┃ ┃ ┗ 📜MyCompanyCompare.module.css
+ ┃ ┃ ┣ 📜App.css
+ ┃ ┃ ┗ 📜resets.css
+ ┃ ┗ 📂utils
  ┃ ┃ ┣ 📜convertTo100mil.js
  ┃ ┃ ┣ 📜similarity.js
  ┃ ┃ ┗ 📜sorting.js
- ┃ ┣ 📜App.css
- ┃ ┣ 📜App.js
- ┃ ┣ 📜index.css
- ┃ ┗ 📜index.js
  ┣ 📜.env
+ ┣ 📜.gitignore
+ ┣ 📜README.md
+ ┣ 📜debug.log
  ┣ 📜jsconfig.json
  ┣ 📜package-lock.json
  ┗ 📜package.json
@@ -402,7 +487,7 @@
 ## 이번 프로젝트를 통해 배운 점은 다음과 같습니다:
 
 ## Frontend
-### React를 활용한 기업 비교 페이지 구현
+### **React** 를 활용한 기업 비교 페이지 구현
 1. 컴포넌트 상태 관리 ( `useState` ) <br>
 - 여러 개의 상태 변수를 `useState` 로 관리하여 UI 상태를 유동적으로 변경하는 방법을 배웠습니다.<br>
 - 특히 모달 창 열기 / 닫기, 선택된 기업 목록, 추가된 기업 목록, 로딩 상태 등 다양한 상태 변수를 독립적으로 관리하여 복잡한 UI 동작을 처리하는 법을 익혔습니다.<br>
@@ -472,6 +557,63 @@ const handleInvestmentClick = () => {
 
 <br>
 
+### **Next.js** 마이그레이션을 통한 추가 개선 사항
+- 기존의 React로 구현된 모든 페이지 컴포넌트를 **Next.js** 의 파일 기반 라우팅 방식으로 변환하였습니다.
+- 이를 통해 **페이지 로딩 속도**, **SEO 최적화**, **코드 구조 간소화** 등의 개선을 이루었습니다.
+- 주요 개선 사항은 다음과 같습니다.
+
+1. **라우팅 방식 개선 (React `useNavigate` → Next.js `useRouter` )** <br>
+ - 기존 React에서는 `useNavigate` 로 페이지 이동을 처리했으나, Next.js의 `useRouter` 를 사용하면서 전체 페이지 새로고침 없이 페이지 전환이 이루어졌습니다.
+ - 이를 통해 더욱 즉각적인 네비게이션이 가능해졌습니다.
+
+2. **SEO 및 메타 데이터 관리 방식 개선 (React `document.title` → Next.js `Head` 컴포넌트)** <br>
+ - 기존 React에서는 `useEffect` 로 `document.title` 을 수동 설정하는 방식으로 페이지 타이틀을 관리했습니다. 
+ - Next.js로 마이그레이션하면서는 `Head` 컴포넌트를 사용하여 각 페이지마다 제목과 설명 등의 메타 데이터를 직접 설정하게 되었습니다.
+ - 이렇게 변경함으로써 SEO가 크게 개선되었고, 검색 엔진이 페이지 내용을 더 쉽게 크롤링하고 인덱싱할 수 있어 검색 결과에 더 잘 반영되도록 최적화되었습니다.
+
+   - **React 코드**
+     ```jsx
+     useEffect(() => {
+       document.title = "View My Startup - 나의 기업 비교";
+     }, []);
+     ```
+
+    - **Next.js 코드**
+        ```jsx
+        import Head from "next/head";
+
+        return (
+            <Head>
+                <title>View My Startup - 나의 기업 비교</title>
+                <meta name="description" content="비교할 기업 선택 페이지" />
+            </Head>
+        );
+         ```
+
+3. **정적 파일 접근 방식 변경 (React import → Next.js `public` 폴더)** <br>
+- 기존 React에서는 각 이미지를 사용할 때마다 개별적으로 import하여 사용해야 했지만, Next.js에서는 `public` 폴더를 통해 이미지를 간단히 경로로 참조할 수 있습니다.
+- 이를 통해 코드가 간결해졌으며, 이미지 파일을 관리하는 방식이 더 직관적이고 효율적으로 바뀌었습니다.
+
+
+- **React 코드**
+     ```jsx
+     import icCircle from "../assets/images/ic_circle.svg";
+     import icPlus from "../assets/images/ic_plus.svg";
+
+     <img src={icCircle} alt="circle" />
+     <img src={icPlus} alt="plus" />
+     ```
+
+- **Next.js 코드**
+     ```jsx
+     <img src="/assets/images/ic_circle.svg" alt="circle" />
+     <img src="/assets/images/ic_plus.svg" alt="plus" />
+     ```
+
+=> **이와 같은 Next.js로의 마이그레이션을 통해 페이지 로딩 속도 개선, SEO 최적화, 코드의 가독성 및 유지보수성을 향상시킬 수 있었습니다.**
+
+<br>
+
 ## Backend
 ### 기업 데이터 처리 및 정렬 API 구현
 1. Axios를 통한 API 통신 <br>
@@ -524,4 +666,3 @@ if (!Array.isArray(allCompanies)) {
 <br>
 
 => **이와 같은 경험을 통해 API 호출, 데이터 처리, 정렬 로직, 에러 처리 등과 같은 백엔드 통신 및 데이터 핸들링 기술을 심도 있게 학습할 수 있었습니다.**
-
